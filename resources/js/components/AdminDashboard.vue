@@ -1,5 +1,5 @@
 <template>
-  <h1> Hello, Vuejs with Laravel </h1>
+  <h1> Hello, Vuejs with Laravel - Testing Github</h1>
 </template>
 <script>
 export default {
