@@ -13,6 +13,6 @@ class LoginController extends Controller
 $cookie_name = "Rolle";
 $cookie_value = $_GET["Rolle"];
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-return view('Dashboard');
+return view('Dashboard', ["Rolle"=>$cookie_value]);
     }
 }

@@ -19,8 +19,7 @@ window.Vue = require('vue').default;
 
 
 // Registrierung Vue-Komponenten
-Vue.component('admindashboard', require('./components/AdminDashboard.vue').default);
-Vue.component('EinzelnLernende', require('./components/Einzelnlernende.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

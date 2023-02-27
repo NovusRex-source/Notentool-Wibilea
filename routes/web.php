@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\LernendeController;
+use App\Http\Controllers\NotenController;
+use App\Http\Controllers\SchulfachController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -14,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::view('/', 'Login');
-Route::get('/Cookie', [LoginController::class,'Login']);
-Route::get('/Dashboard',  [LernendeController::class,'Rolle']);
-Route::get('/EinzelnLernende/{user}', [LernendeController::class,'EinzelnLernende']);
-Route::get('/ListeLernende', [LernendeController::class,'ListeLernende']);
+Route::view('/Schulfach/create', 'FachErfassen');
+
+
+
+Route::get('/Dashboard',  [NotenController::class,'Rolle']);
+Route::get('/EinzelnLernende/{user}', [NotenController::class,'EinzelnLernende']);
+Route::get('/ListeLernende', [NotenController::class,'ListeLernende']);
+Route::get('/ListeAusbilder', [NotenController::class,'ListeAusbilder']);
+Route::get('/Cookieset', [LoginController::class,'Login']);
+
+
+Route::get('/Schulfach', [SchulfachController::class,'index']);
+Route::get('/Schulfach/post', [SchulfachController::class,'post']);
+Route::get('/Schulfach/destroy/{pkFach}', [SchulfachController::class, 'destroy']);
+Route::get('/Schulfach/edit/{pkFach}', [SchulfachController::class, 'edit']);
+Route::post('/Schulfach/update/{pkFach}', [SchulfachController::class, 'update']);

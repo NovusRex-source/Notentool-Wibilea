@@ -1,0 +1,17 @@
+#Rolle {
+    border: solid 1px black;
+    width: min-content;
+}
+.Dashboardelements {
+    display: flex;
+}
+.Dashboardelements div {
+    display: flex;
+    flex-direction: column;
+ 
+}
+.Dashboardelements div a
+{
+    border: solid 1px black;
+    margin: 10px;
+}

@@ -7,15 +7,18 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use League\CommonMark\Extension\Table\Table;
 
-class LernendeController extends Controller
+class NotenController extends Controller
 {
     function ListeLernende()
     {
         $Lernende = DB::table('tblLernende')->get();
         return view('ListeLernende', ['Lernende'=>$Lernende]);
     }
-
-
+    function ListeAusbilder()
+    {
+        $Ausbilder = DB::table('tblAusbilder')->get();
+        return view('ListeAusbilder', ['Ausbilder'=>$Ausbilder]);
+    }
 
     public function Noten(){
         return $this->belongsTo('fkNoten', 'fkNoten');
@@ -30,6 +33,8 @@ class LernendeController extends Controller
         return view('EinzelnLernende', ['Lernende'=>$Lernende, 'Noten'=>$Noten, 'Fach'=>$Fach]);
 
     }
+
+ 
     function Cookie()
     {
        
