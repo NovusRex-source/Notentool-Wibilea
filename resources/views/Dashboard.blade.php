@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>{{$rolle}}<h1>
 
+
+
+<a href="/Listelernende">Liste Lernende<a>
 
 
     

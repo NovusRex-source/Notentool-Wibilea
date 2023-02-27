@@ -1,10 +1,12 @@
 <template>
-  <h1> Hello, Vuejs with Laravel </h1>
+  <div>
+    {{message}}
+    </div>
 </template>
 <script>
 export default {
-  setup() {
-
+  return() {
+    message:'Hello World'
    }
 }
 </script>
