@@ -29,8 +29,8 @@
 <a class="Dashboardelement" href="/Schulfach">Liste Schuflächer</a>
 </div>
 <div>
-<a class="Dashboardelement" href="/BerufErfassen">Beruf erfassen</a>
-<a class="Dashboardelement" href="/ListeBerufe">Liste Berufe</a>
+<a class="Dashboardelement" href="/Lehrberuf/create">Lehrberuf erfassen</a>
+<a class="Dashboardelement" href="/Lehrberuf">Liste Lehrberufe</a>
 </div>
 @endif
 

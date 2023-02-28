@@ -41,7 +41,9 @@ function update(request $request){
 [
     'fldFachname' => $request['Fach']
 ]
-);}}
+);}
+return redirect('Schulfach');
+}
 
 
 function destroy($pkFach)
