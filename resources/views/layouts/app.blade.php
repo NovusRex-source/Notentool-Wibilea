@@ -14,7 +14,6 @@
 
 <body class="pb-3">
     @yield('content')
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

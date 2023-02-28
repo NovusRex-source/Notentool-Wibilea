@@ -11,9 +11,10 @@
             <td>{{$item->fldNachname}}</td>
             <td>{{$item->fldEmail}}</td>
             <td>{{$item->fldLehrjahr}}</td>
+            <td>{{$item->fldBerufsbezeichnung}}</td>
             <td><a href="/EinzelnLernende/{{$item->pkLernende}}">Notenübersicht<a></td>
-            <td><a href="/">Edit</a></td>
-            <td><a href="/">Delete</a></td>
+            <td><a href="/Lernende/edit/{{$item->pkLernende}}">Edit</a></td>
+            <td><a href="/Lernende/destroy/{{$item->pkLernende}}">Delete</a></td>
 
         </tr>
     @endforeach

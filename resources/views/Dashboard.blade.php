@@ -14,15 +14,15 @@
 
 @if ($Rolle == 'Ausbilder' or $Rolle == 'Superadmin')
 <div>
-<a class="Dashboardelement" href="/LernendeErfassen">Lernende erfassen</a>
-<a class="Dashboardelement" href="/ListeLernende">Liste Lernende</a>
+<a class="Dashboardelement" href="/Lernende/create">Lernende erfassen</a>
+<a class="Dashboardelement" href="/Lernende">Liste Lernende</a>
 </div>
 @endif
 
 @if ($Rolle == 'Superadmin')
 <div>
-<a class="Dashboardelement" href="/AusbilderErfassen">Ausbilder erfassen</a>
-<a class="Dashboardelement" href="/ListeAusbilder">Liste Ausbilder</a>
+<a class="Dashboardelement" href="/Ausbilder/create">Ausbilder erfassen</a>
+<a class="Dashboardelement" href="/Ausbilder">Liste Ausbilder</a>
 </div>
 <div>
 <a class="Dashboardelement" href="/Schulfach/create">Schulfach erfassen</a>

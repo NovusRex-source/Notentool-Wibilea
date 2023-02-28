@@ -7,11 +7,10 @@
     @foreach ($Ausbilder as $item)
         <tr>
             <td>{{$item->pkAusbilder}}</td>
-            <td>{{$item->fldVorname}}</td>
-            <td>{{$item->fldNachname}}</td>
-            <td>{{$item->fldEmail}}</td>
-            <td><a href="/">Edit</a></td>
-            <td><a href="/">Delete</a></td>
+            <td>{{$item->fldBenutzername}}</td>
+            <td>{{$item->fldBerufsbezeichnung}}</td>
+            <td><a href="Ausbilder/edit/{{$item->pkAusbilder}}">Edit</a></td>
+            <td><a href="Ausbilder/destroy/{{$item->pkAusbilder}}">Delete</a></td>
 
         </tr>
     @endforeach

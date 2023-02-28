@@ -5,7 +5,9 @@
 @section('content')
 
 
-<form method="GET" action="/Cookieset"> 
+<form method="POST" action="/Cookieset"> 
+    @csrf
+    <input type="hidden" name="id" value="id">
       <label>
         <input type="radio" name="Rolle" value="Lernende" />Lernende
     </label>

@@ -9,35 +9,20 @@ use League\CommonMark\Extension\Table\Table;
 
 class NotenController extends Controller
 {
-    function ListeLernende()
+    
+    function index($user)
     {
-        $Lernende = DB::table('tblLernende')->get();
-        return view('ListeLernende', ['Lernende'=>$Lernende]);
+        $Lernende = DB::table('tblLernende')->where('pkLernende', $user)->get();
+        $Noten = DB::table('viewFachNote')->where('fkLernende', $user)->get();
+        return view('EinzelnLernende', ['Lernende'=>$Lernende, 'Noten'=>$Noten]);
+
     }
-    function ListeAusbilder()
-    {
-        $Ausbilder = DB::table('tblAusbilder')->get();
-        return view('ListeAusbilder', ['Ausbilder'=>$Ausbilder]);
-    }
+
+
 
     public function Noten(){
         return $this->belongsTo('fkNoten', 'fkNoten');
     }
 
 
-    function EinzelnLernende($user)
-    {
-        $Lernende = DB::table('tblLernende')->where('pkLernende', $user)->get();
-        $Noten = DB::table('tblNoten')->where('fkLernende', $user)->get();
-        $Fach = DB::table('tblFach')->get();
-        return view('EinzelnLernende', ['Lernende'=>$Lernende, 'Noten'=>$Noten, 'Fach'=>$Fach]);
-
-    }
-
- 
-    function Cookie()
-    {
-       
-            echo "Value is: " . $_COOKIE["Rolle"];
-        }
 }
