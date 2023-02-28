@@ -18,7 +18,7 @@ function index($pkFach)
 function create()
 {
     $Berufe = DB::table('tblLehrberuf')->get();
-    return view('LernendeErfassen', ['Berufe'=>$Berufe]);
+    return view('FachBerufERfassen', ['Berufe'=>$Berufe]);
 
 }
 function post()

@@ -70,3 +70,4 @@ Route::post('/Ausbilder/update/{pkAusbilder}', [AusbilderController::class, 'upd
 //Verknüpfung von Schulfach und Beruf mit anzeigen, erstellen, löschen, bearbeiten
 Route::get('/FachBeruf/{pkFach}', [FachBerufController::class, 'index']);
 Route::get('/FachBeruf/destroy/{pkFachLehrberuf}', [FachBerufController::class, 'destroy']);
+Route::get('/FachBeruf/create/{pkFachLehrberuf}', [FachBerufController::class, 'create']);

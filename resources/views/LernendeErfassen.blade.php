@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Ausbilder  erfassen</h1>
+<h1>Lernenden  erfassen</h1>
 <form method="GET" action="/Lernende/post"> 
     <label>
         Vorname<input type="text" name="Vorname" value="" />
