@@ -10,9 +10,10 @@
 
         </tr>
     @endforeach
-    <td><a href="create/{{$item->pkLehrberuf}}">Add</a></td>
-    <h1>Übersicht {{$item->fldFachname}}</h1>
-
+    @foreach ($Fach as $Faecher)
+    <td><a href="create/{{$Faecher->pkFach}}">Add</a></td>
+    <h1>Übersicht {{$Faecher->fldFachname}}</h1>
+    @endforeach
 
 
 

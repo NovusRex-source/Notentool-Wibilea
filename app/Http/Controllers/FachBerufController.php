@@ -6,36 +6,33 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use League\CommonMark\Extension\Table\Table;
+use League\CommonMark\Node\Block\TightBlockInterface;
 
 class FachBerufController extends Controller
 {
 function index($pkFach)
 {
     $Beruf = DB::table('viewFachLehrberuf')->where('pkFach',$pkFach)->get();
-    return view('ListeFachBeruf', ['Beruf'=>$Beruf]); 
+    $Fach = DB::table('tblFach')->where('pkFach', $pkFach)->get();
+    return view('ListeFachBeruf', ['Beruf'=>$Beruf, 'Fach'=>$Fach]); 
 }
 
-function create()
+function create($pkFach)
 {
-    $Berufe = DB::table('tblLehrberuf')->get();
-    return view('FachBerufERfassen', ['Berufe'=>$Berufe]);
+    $Beruf = DB::table('tblLehrberuf')->get();
+    return view('FachBerufErfassen', ['Beruf'=>$Beruf, 'pkFach'=>$pkFach]);
 
 }
-function post()
+function post($pkFach)
 {
-        DB::table('tblLernende')
+        DB::table('tblFachLehrberuf')
             ->insert(
                 [
-                    'fldVorname' => $_GET['Vorname'],
-                    'fldNachname' => $_GET['Nachname'],
-                    'fldEmail' => $_GET['Email'],
-                    'fkLehrberufB' => $_GET['Lehrberuf'],
-                    'fldLehrjahr' => $_GET['Lehrjahr'],
-                    'fldEnabled' => 1
+                    'fkLehrberufC' => $_GET['Lehrberuf'],
+                    'fkFachB' => $_GET['Schulfach'],
                 ]
             );
-        return redirect('Lernende/create');
-
+            return redirect('Schulfach');
 }
 
 
@@ -45,7 +42,7 @@ function destroy($pkFachLehrberuf)
     ->where('pkFachLehrberuf', $pkFachLehrberuf)
     ->delete(
     );
-    return redirect('FachBeruf');
+    return redirect('Schulfach');
 }
 
 }
