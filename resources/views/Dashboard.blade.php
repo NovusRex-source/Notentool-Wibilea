@@ -6,8 +6,8 @@
 <div class="Dashboardelements">
 @if($Rolle == 'Lernende')
 <div>
-<a class="Dashboardelement" href="/EinzelnLernende">Meine Noten</a>
-<a class="Dashboardelement" href="/NoteErfassen">Note erfassen</a>
+<a class="Dashboardelement" href="/Note/{{$UserID}}">Meine Noten</a>
+<a class="Dashboardelement" href="/Note/create/{{$UserID}}">Note erfassen</a>
 </div>
 @endif
 

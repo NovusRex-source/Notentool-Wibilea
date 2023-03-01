@@ -23,11 +23,10 @@ Route::post('/Dashboard',  [NotenController::class,'Rolle']);
 Route::post('/Cookieset', [LoginController::class,'Login']);
 
 //Noten anzeigen, erstellen, löschen, bearbeiten
-Route::get('/Noten', [NotenController::class,'index']);
-Route::post('/Note/create', [NotenController::class,'create']);
+Route::get('/Note/{user}', [NotenController::class,'index']);
+Route::get('/Note/create/{user}', [NotenController::class,'create']);
 Route::post('/Note/post', [NotenController::class,'post']);
-Route::post('/Note/update', [NotenController::class,'update']);
-Route::post('/Note/destroy', [NotenController::class,'destroy']);
+Route::get('/Note/destroy/{pkNote}', [NotenController::class,'destroy']);
 
 
 

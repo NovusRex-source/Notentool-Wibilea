@@ -10,6 +10,10 @@
     <label>
         Schulfach<input type="text" name="Fach" value="{{$item->fldFachname}}" />
     </label>
+    <select name="Enabled">
+        <option  value="1">Aktiviert</option>
+        <option value="0">Deaktiviert</option>
+        </select>
     <button type="submit" value="Erfassen" >Anpassen</button>
     </form>
     @endforeach

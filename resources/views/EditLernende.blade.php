@@ -27,6 +27,11 @@
    @endforeach
     </select>
 </label>
+<br>
+<select name="Enabled">
+    <option  value="1">Aktiviert</option>
+    <option value="0">Deaktiviert</option>
+    </select>
 
     <br>
     <label>

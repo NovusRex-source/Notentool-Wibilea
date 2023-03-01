@@ -22,7 +22,7 @@ function post()
             ->insert(
                 [
                     'fldFachname' => $_GET['Fach'],
-                    'fldEnabled' => 1,
+                    'fldEnabledB' => 1,
                 ]
             );
         return redirect('Schulfach/create');
@@ -39,7 +39,8 @@ function update(request $request){
     if ($request['Fach'] != ""){
      DB::table('tblFach')->where('pkFach',$request['pkFach'])->update(
 [
-    'fldFachname' => $request['Fach']
+    'fldFachname' => $request['Fach'],
+    'fldEnabledB' => $request['Enabled']
 ]
 );}
 return redirect('Schulfach');

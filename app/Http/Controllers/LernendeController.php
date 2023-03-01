@@ -10,9 +10,9 @@ use League\CommonMark\Extension\Table\Table;
 class LernendeController extends Controller
 {
 function index()
-{
+{   $Lernendefilter = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_COOKIE['Beruf'])->get();
     $Lernende = DB::table('viewLernendeBeruf')->get();
-    return view('ListeLernende', ['Lernende'=>$Lernende]); 
+    return view('ListeLernende', ['Lernende'=>$Lernende, 'Lernendefilter'=>$Lernendefilter]); 
 }
 
 function create()
@@ -31,7 +31,7 @@ function post()
                     'fldEmail' => $_GET['Email'],
                     'fkLehrberufB' => $_GET['Lehrberuf'],
                     'fldLehrjahr' => $_GET['Lehrjahr'],
-                    'fldEnabled' => 1
+                    'fldEnabledA' => 1
                 ]
             );
         return redirect('Lernende/create');
@@ -55,6 +55,7 @@ function update(request $request){
     'fldEmail' => $request['Email'],
     'fkLehrberufB' => $request['Lehrberuf'],
     'fldLehrjahr' => $request['Lehrjahr'],
+    'fldEnabledA' => $request['Enabled']
 ]
 );}
 return redirect('Lernende');

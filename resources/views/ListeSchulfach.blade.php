@@ -8,7 +8,7 @@
         <tr>
             <td>{{$item->pkFach}}</td>
             <td>{{$item->fldFachname}}</td>
-            <td>{{$item->fldEnabled}}</td>
+            <td>{{$item->fldEnabledB}}</td>
             <td><a href="FachBeruf/{{$item->pkFach}}">Details</a></td>
             <td><a href="Schulfach/edit/{{$item->pkFach}}">Edit</a></td>
             <td><a href="Schulfach/destroy/{{$item->pkFach}}">Delete</a></td>
