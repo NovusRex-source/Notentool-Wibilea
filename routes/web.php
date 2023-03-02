@@ -48,6 +48,7 @@ Route::get('/Schulfach', [SchulfachController::class,'index']);
 Route::get('/Schulfach/post', [SchulfachController::class,'post']);
 Route::get('/Schulfach/destroy/{pkFach}', [SchulfachController::class, 'destroy']);
 Route::get('/Schulfach/edit/{pkFach}', [SchulfachController::class, 'edit']);
+Route::get('/Schulfach/filter', [SchulfachController::class, 'filter']);
 Route::post('/Schulfach/update/{pkFach}', [SchulfachController::class, 'update']);
 
 

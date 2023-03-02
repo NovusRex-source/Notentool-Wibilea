@@ -15,3 +15,6 @@
     border: solid 1px black;
     margin: 10px;
 }
+body {    text-align-last: center;}
+table {     margin: auto;
+}

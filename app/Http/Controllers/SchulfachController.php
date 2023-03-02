@@ -14,6 +14,11 @@ class SchulfachController extends Controller
         $Schulfach = DB::table('tblFach')->get();
         return view('ListeSchulfach', ['Schulfach' => $Schulfach]);
     }
+    function filter()
+    {
+        $Schulfach = DB::table('tblFach')->where('fldFachname', $_GET["Suche"] )->get();
+        return view('ListeSchulfach', ['Schulfach' => $Schulfach]);
+    }
 
 function post()
 {

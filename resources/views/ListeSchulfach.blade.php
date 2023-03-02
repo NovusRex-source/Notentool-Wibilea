@@ -15,6 +15,14 @@
 
         </tr>
     @endforeach
+    <form method="get" action="/Schulfach/filter">
+        Filter
+       <label>
+        Suche:
+        <input type="text" value="" name="Suche">
 
+    </label>
+    <button type="submit" value="Filter" >Filtern</button>
+</form>
 
 @endsection

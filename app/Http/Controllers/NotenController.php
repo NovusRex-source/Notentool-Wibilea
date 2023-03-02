@@ -29,7 +29,7 @@ class NotenController extends Controller
     }
     function create($User)
     {
-        $Beruf = DB::table('viewLernendeFachLehrberuf')->where('pkLernende', $User)->get();
+        $Beruf = DB::table('viewLernendeFachLehrberuf')->where('pkLernende', $User)->where('fldEnabledB', 1)->get();
         return view('NoteErfassen', ['User'=> $User, 'Beruf'=>$Beruf]);
     }
 
