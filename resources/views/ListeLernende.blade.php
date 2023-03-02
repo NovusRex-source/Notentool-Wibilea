@@ -18,6 +18,19 @@
             <td><a href="/Lernende/destroy/{{$item->pkLernende}}">Delete</a></td>
         </tr>
     @endforeach
+
+    <label>
+    <form method="get" action="/Lernende/filter/">
+        Filter
+        <select name="Lehrberuf">
+        @foreach($Beruf as $item)
+        <option value="{{$item->pkLehrberuf}}">{{ $item->fldBerufsbezeichnung}}</option>
+       @endforeach
+        </select>
+    </label>
+    <button type="submit" value="Filter" >Filtern</button>
+</form>
+
 @endif
 @if ($_COOKIE['Rolle'] == "Ausbilder")
 @foreach ($Lernendefilter as $item)

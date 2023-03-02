@@ -24,6 +24,7 @@ Route::post('/Cookieset', [LoginController::class,'Login']);
 
 //Noten anzeigen, erstellen, löschen, bearbeiten
 Route::get('/Note/{user}', [NotenController::class,'index']);
+Route::get('/Note/filter/{user}', [NotenController::class,'filter']);
 Route::get('/Note/create/{user}', [NotenController::class,'create']);
 Route::post('/Note/post', [NotenController::class,'post']);
 Route::get('/Note/destroy/{pkNote}', [NotenController::class,'destroy']);
@@ -33,6 +34,7 @@ Route::get('/Note/destroy/{pkNote}', [NotenController::class,'destroy']);
 //Lernende anzeigen, erstellen, löschen, bearbeiten
 Route::get('/Lernende/create',  [LernendeController::class,'create']);
 Route::get('/Lernende', [LernendeController::class,'index']);
+Route::get('/Lernende/filter/', [LernendeController::class,'filter']);
 Route::get('/Lernende/post', [LernendeController::class,'post']);
 Route::get('/Lernende/destroy/{pkLernende}', [LernendeController::class, 'destroy']);
 Route::get('/Lernende/edit/{pkLernende}', [LernendeController::class, 'edit']);

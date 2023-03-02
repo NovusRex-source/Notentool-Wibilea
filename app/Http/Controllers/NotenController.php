@@ -12,10 +12,20 @@ class NotenController extends Controller
     
     function index($user)
     {
-        $Lernende = DB::table('tblLernende')->where('pkLernende', $user)->get();
+        $Beruf = DB::table('viewLernendeFachLehrberuf')->where('pkLernende', $user)->get();
+        $Lernende = DB::table('viewLernendeBeruf')->where('pkLernende', $user)->get();
         $Noten = DB::table('viewFachNote')->where('fkLernende', $user)->get();
-        return view('ListeNoten', ['Lernende'=>$Lernende, 'Noten'=>$Noten]);
+        $avg = DB::table('viewFachNote')->where('fkLernende', $user)->avg('fldNote');
+        return view('ListeNoten', ['Lernende'=>$Lernende, 'Noten'=>$Noten, 'Beruf'=>$Beruf, 'avg'=>$avg]);
 
+    }
+    function filter($user)
+    {
+        $Beruf = DB::table('viewLernendeFachLehrberuf')->where('pkLernende', $user)->get();
+        $Lernende = DB::table('viewLernendeBeruf')->where('pkLernende', $user)->get();
+        $Noten = DB::table('viewFachNote')->where('fkLernende', $user)->where('fkFachA', $_GET["Fach"])->get();
+        $avg = DB::table('viewFachNote')->where('fkLernende', $user)->where('fkFachA', $_GET["Fach"])->avg('fldNote');
+        return view('ListeNoten', ['Lernende'=>$Lernende, 'Noten'=>$Noten, 'Beruf'=>$Beruf, 'avg'=>$avg]);
     }
     function create($User)
     {
@@ -35,7 +45,7 @@ class NotenController extends Controller
            'fldBegruendung' => $request['Begruendung']
        ]
        );
-       return redirect('/');
+       return redirect()->back();
     }
 
     public function Noten(){
@@ -47,7 +57,7 @@ class NotenController extends Controller
         ->where('pkNoten', $pkNote)
         ->delete(
         );
-        return redirect('/');
+        return redirect()->back();
     }
 
 }

@@ -10,9 +10,32 @@ use League\CommonMark\Extension\Table\Table;
 class LernendeController extends Controller
 {
 function index()
-{   $Lernendefilter = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_COOKIE['Beruf'])->get();
+{           $Beruf = DB::table('viewLernendeBeruf')->get();
+    if ($_COOKIE['Rolle'] == "Ausbilder"){ 
+    $Lernendefilter = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_COOKIE['Beruf'])->get();
     $Lernende = DB::table('viewLernendeBeruf')->get();
-    return view('ListeLernende', ['Lernende'=>$Lernende, 'Lernendefilter'=>$Lernendefilter]); 
+    return view('ListeLernende', ['Lernende'=>$Lernende, 'Lernendefilter'=>$Lernendefilter,  'Beruf'=>$Beruf]); 
+    }
+    elseif ($_COOKIE['Rolle'] == "Superadmin") {
+        $Lernende = DB::table('viewLernendeBeruf')->get();
+        return view('ListeLernende', ['Lernende'=>$Lernende,  'Beruf'=>$Beruf]); 
+    }
+
+    
+}
+
+function filter()
+{
+    $Beruf = DB::table('viewLernendeBeruf')->get();
+    if ($_COOKIE['Rolle'] == "Ausbilder"){ 
+        $Lernendefilter = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_COOKIE['Beruf'])->get();
+        $Lernende = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_GET['Lehrberuf'])->get();
+        return view('ListeLernende', ['Lernende'=>$Lernende, 'Lernendefilter'=>$Lernendefilter, 'Beruf'=>$Beruf]); 
+        }
+        elseif ($_COOKIE['Rolle'] == "Superadmin") {
+            $Lernende = DB::table('viewLernendeBeruf')->where('pkLehrberuf', $_GET['Lehrberuf'])->get();
+            return view('ListeLernende', ['Lernende'=>$Lernende, 'Beruf'=>$Beruf]); 
+        }
 }
 
 function create()

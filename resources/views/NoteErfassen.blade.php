@@ -33,7 +33,7 @@
 </label>
  
 
-    <button type="submit" value="Erfassen" >Anpassen</button>
+    <button type="submit" value="Erfassen" >Note Senden</button>
     </form>
     @isset($Message)
     <p>{{$Message}}</p>

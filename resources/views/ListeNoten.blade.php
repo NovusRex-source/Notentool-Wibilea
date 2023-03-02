@@ -16,8 +16,20 @@
             @endif
         </tr>
     @endforeach
-
-
+    <label>
+        @foreach ($Lernende as $item)
+    <form method="get" action="/Note/filter/{{$item->pkLernende}}">
+        Filter
+        <select name="Fach">
+        @foreach($Beruf as $item)
+        <option value="{{$item->pkFach}}">{{ $item->fldFachname}}</option>
+       @endforeach
+        </select>
+    </label>
+    <button type="submit" value="Filter" >Filtern</button>
+</form>
+@endforeach
+{{$avg}}
 
 @section('content')
 @endsection
