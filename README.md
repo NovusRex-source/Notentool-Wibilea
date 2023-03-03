@@ -1,4 +1,11 @@
 <h1> Installation </h1>
+<h2>Software</h2>
+<ul>   
+    <li>Node.js</li>
+        <li>PHP Composer</li>
+            <li>Visual Studio Code</li>
+</ul>
+<h2>Vorgehen</h2>
 <ol>
     <li>Herunterladen der Dateien</li>
     <li>Herunterladen der Datenbank</li>
