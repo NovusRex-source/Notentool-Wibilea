@@ -3,7 +3,7 @@
     <li>Herunterladen der Dateien</li>
     <li>Herunterladen der Datenbank</li>
     <li>Datenbank in MySQL importieren</li>
-    <li>.env Daatei bearbeiten, DB Connections anpassen</li>
+    <li>.env Datei bearbeiten, DB Connections anpassen</li>
     <li>MySQl starten</li>
     <li>Laravel Projekt öffnen</li>
     <li>Terminal öffnen, Befehl: npm run dev</li>
