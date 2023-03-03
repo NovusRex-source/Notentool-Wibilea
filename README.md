@@ -1,6 +1,7 @@
 <h1> Installation </h1>
 <h2>Software</h2>
 <ul>   
+    <li>PHP Version >8.1</li>
     <li>Node.js</li>
         <li>PHP Composer</li>
             <li>Visual Studio Code</li>
