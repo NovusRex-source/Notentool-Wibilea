@@ -13,8 +13,9 @@
     <li>Datenbank in MySQL importieren</li>
     <li>.env Datei bearbeiten, DB Connections anpassen</li>
     <li>MySQl starten</li>
-    <li>Laravel Projekt öffnen</li>
-    <li>Terminal öffnen, Befehl: npm run dev</li>
+    <li>Laravel Projekt öffnen</li>   
+    <li>Terminal, Befehl: npm install</li>
+    <li>Terminal, Befehl: npm run dev</li>
     <li>2. Terminal öffnen, Befehl: php artisan serve</li>
     <li>127.0.0.1:8000</li>
 </ol>
